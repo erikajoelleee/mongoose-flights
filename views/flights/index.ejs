@@ -17,6 +17,7 @@
         <td><%= flight.airport %></td>
         <td><%= flight.flightNumber %></td>
         <td><%= flight.departs.toISOString().slice(0, 16) %></td>
+        <td><a href="/flights/<%= flight._id %>">Detail</a></td>
       </tr>
     <% }) %>
   </tbody>

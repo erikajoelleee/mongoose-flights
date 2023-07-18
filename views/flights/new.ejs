@@ -1,0 +1,26 @@
+<h1>Add Flight</h1>
+<form method="POST" action="/flights">
+  <label for="airline">Airline:</label>
+  <select name="airline">
+    <option value="American">American</option>
+    <option value="Southwest">Southwest</option>
+    <option value="United">United</option>
+  </select>
+  <br>
+  <label for="airport">Airport:</label>
+  <select name="airport">
+    <option value="AUS">AUS</option>
+    <option value="DFW">DFW</option>
+    <option value="DEN" selected>DEN</option>
+    <option value="LAX">LAX</option>
+    <option value="SAN">SAN</option>
+  </select>
+  <br>
+  <label for="flightNo">Flight No.:</label>
+  <input type="number" name="flightNo" required min="10" max="9999">
+  <br>
+  <label for="departs">Departure Date/Time:</label>
+  <input type="datetime-local" name="departs" value=" " required>
+  <br>
+  <input type="submit" value="Submit">
+</form>

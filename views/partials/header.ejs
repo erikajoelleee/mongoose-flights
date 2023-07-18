@@ -9,11 +9,10 @@
 </head>
 <body>
   <nav>
-    <img src="/images/camera.svg">
-    <a href="/tickets/new"	<%- title === 'Add Performer' ? 'class="active"' : '' %>>
-		BUY TICKET</a>
-    <a href="/flights/new" <%- title === 'Add Flight' ? 'class="active"' : '' %>>ADD FLIGHTS</a>
-    <a href="/flights" <%- title === 'All Flights' ? 'class="active"' : '' %>>ALL FLIGHTS</a>
+    <ul>
+    <li><a href="/flights">ALL FLIGHTS</a></li>
+    <li><a href="/flights/new">ADD FLIGHT</a></li>
+  </ul>
   </nav>
   <main>
     <h1><%= title %></h1>
