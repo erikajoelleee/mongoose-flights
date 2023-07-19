@@ -1,8 +1,5 @@
-const express = require('express');
-const router = express.Router();
-
-// Import the Flight model
 const Flight = require('../models/flight');
+
 
 async function create(req, res) {
     try {

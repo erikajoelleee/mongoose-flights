@@ -7,15 +7,8 @@ router.get('/', flightController.index);
 router.get('/new', flightController.new);
 router.post('/', flightController.create);
 
-router.get('/:id', async (req, res) => {
-    try {
-      const flight = await Flight.findById(req.params.id);
-      res.render('flights/show', { flight });
-    } catch (err) {
-      console.error(err);
-      res.status(500).send('Server Error');
-    }
-  });
+router.get('/:id', flightController.show);
+  
   
   router.post('/:id/destinations', async (req, res) => {
     try {
