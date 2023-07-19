@@ -1,14 +1,16 @@
-const Flight = require('../models/flights');
+const Flight = require('../models/flight');
 const Ticket = require('../models/tickets');
 
 // ...
 
-exports.new = function (req, res) {
+function newTicket (req, res) {
   const flightId = req.params.id;
   res.render('tickets/new', { flightId });
 };
 
-exports.create = function (req, res) {
+
+
+function create (req, res) {
   const flightId = req.params.id;
   const { seat, price } = req.body;
 
@@ -18,12 +20,10 @@ exports.create = function (req, res) {
     flight: flightId,
   });
 
-  ticket.save(function (err) {
-    if (err) {
-      console.log(err);
-      res.redirect(`/flights/${flightId}/tickets/new`);
-    } else {
-      res.redirect(`/flights/${flightId}`);
-    }
-  });
-};
+  ticket.save()
+  res.redirect(`/flights/${flightId}`);
+    
+  };
+
+
+module.exports = {new: newTicket, create};

@@ -29,10 +29,11 @@ async function create(req, res) {
 async function show(req, res) {
   try {
     console.log("req.params.id", req.params.id);
+    const flight = await Flight.findById(req.params.id);
     let tickets = await Ticket.find({ flight: req.params.id }).populate(
       "flight"
     );
-    res.render("flights/show", {tickets})
+    res.render("flights/show", {tickets, flight})
     console.log("ticket", ticket);
   } catch (err) {}
 
